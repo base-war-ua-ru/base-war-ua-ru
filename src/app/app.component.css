@@ -1,0 +1,23 @@
+:host {
+  display: block;
+  height: 100%;
+}
+
+.app-container {
+  height: calc(100% - 64px);
+}
+
+.sidenav {
+  width: 15%;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  width: 3rem;
+  border-radius: 100%;
+}

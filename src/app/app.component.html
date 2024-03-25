@@ -1,2 +1,42 @@
-<!-- <p>{{ fileContent | async }}</p> -->
-<p [innerHTML]="fileContent | async"></p>
+<mat-toolbar class="toolbar" color="primary">
+  <button
+    mat-icon-button
+    class="example-icon"
+    aria-label="Example icon-button with menu icon"
+    (click)="drawer.toggle()"
+  >
+    <mat-icon>menu</mat-icon>
+  </button>
+
+  <h2>{{ title }}</h2>
+
+  <a routerLink="/"
+    ><img src="../assets/base_logo.jpg" alt="base logo" class="logo"
+  /></a>
+</mat-toolbar>
+
+<mat-drawer-container class="app-container" autosize>
+  <mat-drawer #drawer class="sidenav" mode="side">
+    <mat-nav-list>
+      @for (link of links; track link) {
+      <a mat-list-item [routerLink]="link.url" routerLinkActive="active-link">
+        {{ link.title }}
+      </a>
+      }
+    </mat-nav-list>
+
+    <!-- For more complex navigation lists
+      <mat-nav-list>
+      @for (link of links; track link) {
+      <mat-list-item [activated]="link.isActive">
+        <a matListItemTitle href="...">{{ link }}</a>
+        <button mat-icon-button (click)="showInfo(link)" matListItemMeta>
+          <mat-icon>info</mat-icon>
+        </button>
+      </mat-list-item>
+      }
+    </mat-nav-list> -->
+  </mat-drawer>
+
+  <router-outlet></router-outlet>
+</mat-drawer-container>
