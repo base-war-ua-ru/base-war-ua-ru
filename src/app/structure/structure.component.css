@@ -1,0 +1,43 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.panel {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.panel-title,
+.panel-description,
+.panel-link {
+  font-family: var(--font-main);
+  font-size: 1.2rem;
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.panel-description {
+  color: rgba(0, 0, 0, 0.87);
+  justify-content: center;
+}
+
+.panel-link {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.panel-link:hover {
+  color: var(--color-accent);
+}
+
+.panel-item {
+  margin-bottom: 0.5rem;
+}

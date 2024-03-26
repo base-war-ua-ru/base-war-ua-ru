@@ -31,4 +31,5 @@ export class AppComponent {
   title = 'base-war-ua-ru';
   showFiller = false;
   links = links;
+  width = window.innerWidth;
 }

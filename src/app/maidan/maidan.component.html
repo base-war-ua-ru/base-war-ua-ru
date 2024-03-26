@@ -1,0 +1,10 @@
+@if(data$ | async; as data) {
+<section class="container">
+  <div class="content">
+    <app-maidan-concept [data]="data[0]"></app-maidan-concept>
+    <app-maidan-causes [data]="data[1]"></app-maidan-causes>
+    <app-maidan-start [data]="data[2]"></app-maidan-start>
+    <app-maidan-happen [data]="data[3]"></app-maidan-happen>
+  </div>
+</section>
+}

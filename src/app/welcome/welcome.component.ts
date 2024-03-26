@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   imports: [],
   template: `
     <section class="container">
-      <h1>база</h1>
+      <h1 class="mat-headline-1">база</h1>
       <h2>
         Информационное собрание сведений о войне <br />
         Российской Федерации против Украины
@@ -48,6 +48,13 @@ import { Component } from '@angular/core';
     max-width: 1000px;
     width: 60%;
     margin: 0 auto;
+  }
+
+
+  @media screen and (max-width: 600px) {
+    p {
+      width: 100%;
+    }
   }
   `,
 })

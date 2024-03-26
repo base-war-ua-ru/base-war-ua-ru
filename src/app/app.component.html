@@ -7,16 +7,16 @@
   >
     <mat-icon>menu</mat-icon>
   </button>
-
   <h2>{{ title }}</h2>
-
   <a routerLink="/"
     ><img src="../assets/base_logo.jpg" alt="base logo" class="logo"
   /></a>
 </mat-toolbar>
 
+<mat-toolbar class="toolbar" color="accent"> </mat-toolbar>
+
 <mat-drawer-container class="app-container" autosize>
-  <mat-drawer #drawer class="sidenav" mode="side">
+  <mat-drawer #drawer class="sidenav" [mode]="width > 600 ? 'side' : 'over'">
     <mat-nav-list>
       @for (link of links; track link) {
       <a mat-list-item [routerLink]="link.url" routerLinkActive="active-link">

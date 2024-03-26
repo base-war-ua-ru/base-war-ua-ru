@@ -1,15 +1,32 @@
 <section class="container">
-  <mat-expansion-panel>
-    <mat-expansion-panel-header>
-      <mat-panel-title> Майдан </mat-panel-title>
+  @for(item of baseStructure; track item.id){
+  <mat-expansion-panel class="panel" [expanded]="true">
+    <mat-expansion-panel-header
+      expandedHeight="3.5rem"
+      collapsedHeight="3.5rem"
+      class="panel-header"
+    >
+      <mat-panel-title class="panel-title">
+        {{ item.name }}
+      </mat-panel-title>
 
-      <mat-panel-description> 21 ноября 2013 </mat-panel-description>
+      <mat-panel-description class="panel-description">
+        {{ item.date | date : "shortDate" }}
+      </mat-panel-description>
     </mat-expansion-panel-header>
     <ul>
-      <li><a routerLink="/">Понятие</a></li>
-      <li><a>Причины</a></li>
-      <li><a>Начало</a></li>
-      <li><a>Происходящее</a></li>
+      @for(link of item.links; track link.title){
+      <li class="panel-item">
+        <a
+          class="panel-link"
+          [routerLink]="link.url"
+          [fragment]="link?.fragment"
+        >
+          {{ link.title }}
+        </a>
+      </li>
+      }
     </ul>
   </mat-expansion-panel>
+  }
 </section>

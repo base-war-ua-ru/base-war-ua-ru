@@ -4,7 +4,7 @@
 }
 
 .app-container {
-  height: calc(100% - 64px);
+  height: calc(100% - 64px * 2);
 }
 
 .sidenav {
@@ -20,4 +20,10 @@
 .logo {
   width: 3rem;
   border-radius: 100%;
+}
+
+@media screen and (max-width: 600px) {
+  .sidenav {
+    width: 40%;
+  }
 }
