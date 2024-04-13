@@ -9,6 +9,7 @@ import { MaidanCausesComponent } from './components/maidan-causes/maidan-causes.
 import { AsyncPipe } from '@angular/common';
 import { MaidanStartComponent } from './components/maidan-start/maidan-start.component';
 import { MaidanHappenComponent } from './components/maidan-happen/maidan-happen.component';
+import { MarkdownService } from '../services/markdown.service';
 
 @Component({
   selector: 'app-maidan',
@@ -27,10 +28,10 @@ export class MaidanComponent implements OnInit {
   httpClient = inject(HttpClient);
   data$!: Observable<any>;
 
+  constructor(private markdownService: MarkdownService) {}
+
   ngOnInit(): void {
-    this.httpClient
-      .get('assets/text/maidan/concept.md', { responseType: 'text' })
-      .pipe(map((text) => marked.parse(text)));
+    marked.use({ renderer: this.markdownService.renderer });
 
     const file1$ = this.httpClient
       .get('assets/text/maidan/concept.md', { responseType: 'text' })
